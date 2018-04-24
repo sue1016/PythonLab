@@ -16,8 +16,8 @@ def createRandomSeq(seq):
             seq.append(new)
             count = count + 1
 seqList = []
-predictions = []
 while True:
+    predictions = []
     seq = []
     createRandomSeq(seq)
     if seq not in seqList:
