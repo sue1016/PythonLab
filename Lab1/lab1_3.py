@@ -16,6 +16,7 @@ def createRandomSeq(seq):
             seq.append(new)
             count = count + 1
 seqList = []
+answerSeq = []
 while True:
     predictions = []
     seq = []
@@ -50,5 +51,8 @@ while True:
         if allIsHalfRight(predictions):
             print("Got it")
             print((A,B,C,D,E))
-            break;
+            answerSeq.append(seq)
+        if len(seqList) == 120:
+            print(answerSeq)
+            break
     
