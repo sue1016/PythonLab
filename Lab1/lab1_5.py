@@ -1,13 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt 
-import random
+from random import randint
 from pylab import *
 def getDigits(num):
-    post1 = int(num%10)
-    post2 = int((num%100 - post1)/10)
-    post3 = int((num%1000 - num%100)/100)
-    post4 = int((num%10000 - num%1000)/1000)
-    return [post4,post3,post2,post1]
+    strNum = str(num)
+    digits = []
+    for digit in strNum:
+        digits.append(digit)     
+    return digits
 
 def getMinus(num):
     digits = getDigits(num)
@@ -18,24 +18,42 @@ def getMinus(num):
     copyDigits.sort(reverse = True)
     discDigits = copyDigits
 #    print(discDigits)
-    max = discDigits[0]*1000 + discDigits[1]*100 + discDigits[2]*10 + discDigits[3]
-#    print(max)
-    min = ascDigits[0]*1000 + ascDigits[1]*100 + ascDigits[2]*10 + ascDigits[3]
-#    print(min)
+    max = ''
+    min = ''
+    for digit in discDigits:
+        max = max + digit
+    for digit in ascDigits:
+        min = min + digit
+    max = int(max)
+    min = int(min)
     minus = max - min
     return minus
-
-
+'''
 bag = {}
+minusList = []
+x = np.arange(1000,10000,1)
 for num in range(1000,10000):
     minus = getMinus(num)
+    minusList.append(minus)
     if minus not in bag.keys():
         bag[minus] = 0
     else:
         bag[minus] = bag[minus] + 1
-print(bag)        
-
+print(bag)   
+minusList = np.array(minusList)
+plt.rcParams['lines.color'] = 'r'
+plt.hist(minusList,bins = range(1000,10000))
+plt.title("minus")
+plt.show()
+'''
+secretNum = 6174
 for i in range(0,5):
-    rand = random.randint(1000,9999)
-    print(getMinus(rand))
-
+    rand = randint(1000,10000)
+    print(str(rand),end=': ')
+    minus = rand
+    while minus != secretNum:
+        minus = getMinus(minus)
+        print(str(minus),end = ' ')
+    print('!!!!') 
+    
+        
