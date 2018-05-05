@@ -14,10 +14,8 @@ def getMinus(num):
     copyDigits = digits[:]
     digits.sort()
     ascDigits = digits
-#    print(ascDigits)
     copyDigits.sort(reverse = True)
     discDigits = copyDigits
-#    print(discDigits)
     max = ''
     min = ''
     for digit in discDigits:
@@ -28,24 +26,8 @@ def getMinus(num):
     min = int(min)
     minus = max - min
     return minus
-'''
-bag = {}
-minusList = []
-x = np.arange(1000,10000,1)
-for num in range(1000,10000):
-    minus = getMinus(num)
-    minusList.append(minus)
-    if minus not in bag.keys():
-        bag[minus] = 0
-    else:
-        bag[minus] = bag[minus] + 1
-print(bag)   
-minusList = np.array(minusList)
-plt.rcParams['lines.color'] = 'r'
-plt.hist(minusList,bins = range(1000,10000))
-plt.title("minus")
-plt.show()
-'''
+
+
 secretNum = 6174
 for i in range(0,5):
     rand = randint(1000,10000)
@@ -56,4 +38,21 @@ for i in range(0,5):
         print(str(minus),end = ' ')
     print('!!!!') 
     
-        
+'''
+# 5 神秘的数
+任意一个４位自然数，将组成该数的各位数字重新排列，形成一个最大数和一个最小数，之后两数相减，其差仍为一个自然数。重复进行上述运算，你会发现一个神秘的数。
+要求：
+（1）编程来找到这个神秘的数。
+（2）随机生成5个4位自然数，打印中间结果并验证结论。
+
+------
+####  如何求“最大最小差”  
+1.把每个数字转换成一个字符串  
+2.将字符串的每一个字符提出来，按原来顺序存入一个list里  
+3.用list[:]生成一个拷贝列表（注意不能单纯将源列表赋值给一个新的列表），将原列表和拷贝列表分别做降序升序排序后重组乘字符串，转化为int,后相减  
+
+
+重复做差过程，发现经过数次之后一定会等于神秘数6174，并且再次操作差不会再变  
+
+
+'''
