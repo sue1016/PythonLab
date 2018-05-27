@@ -60,3 +60,6 @@ class SortLib:
 
 sort = SortLib()
 print(sort.selectSort([2,4,42,13]))
+'''
+实现了冒泡，快排，选择排序，插入排序四种排序方法
+'''

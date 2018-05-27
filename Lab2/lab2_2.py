@@ -32,3 +32,11 @@ print("dequeue:" + str(q.dequeue()))
 q.printAll()
 q.getfile('queue.txt')
 q.printAll()
+'''
+使用list实现队列结构  
+使用__保护队列内部元素不被获取  
+使用list.append实现在队尾添加元素  
+使用list.pop(0)实现删除队头的元素  
+文件操作用with open
+
+'''

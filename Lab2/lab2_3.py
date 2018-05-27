@@ -50,4 +50,11 @@ print(set1.substract(set2))
 
 set1.printAll()
 set2.printAll()
+'''
+使用python的set数据结构实现set类  
+构造函数可传入list对象，可能包含重复元素，使用set(list)将list转换成不重复无序的set对象  
+使用set.add(),set.remove()实现在集合中添加删除元素  
+使用if x in set:实现判断是否是集合中的元素  
+使用set.intersection(set),union(set),difference(set)实现交并差  
 
+'''
