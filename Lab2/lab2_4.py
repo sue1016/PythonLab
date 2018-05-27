@@ -1,3 +1,5 @@
+import random
+import numpy as np
 class SortLib:
     def __init__(self):
         pass
@@ -53,13 +55,25 @@ class SortLib:
                     j = j - 1
                 
                 seq[j+1] = x
-            print(seq)  
         return seq
      
+def generateRandomIntList(len):
+    l = []
+    for i in range(0,len):
+        rand = random.randint(0,100)
+        l.append(rand)
+    return l    
     
-
 sort = SortLib()
-print(sort.selectSort([2,4,42,13]))
-'''
-实现了冒泡，快排，选择排序，插入排序四种排序方法
-'''
+print("随机生成原序列:",end = "")
+seq = generateRandomIntList(20)
+print(seq)
+print("冒泡排序:",end="")
+print(sort.bubbleSort(seq))
+print("选择排序:",end="")
+print(sort.selectSort(seq))
+print("快速排序:",end="")
+print(sort.quickSort(seq))
+print("插入排序:",end="")
+print(sort.insertSort(seq))
+

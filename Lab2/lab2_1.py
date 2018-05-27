@@ -5,7 +5,7 @@ class Stack(object):
     def pushstack(self,inItem):
         self.__items.append(inItem)
 
-    def popstack(self,outItem):
+    def popstack(self):
         outItem = self.__items.pop()
         return outItem
 
@@ -20,19 +20,25 @@ class Stack(object):
     
     def printAll(self):
         if self.isempty():
-            print("warm:the stack is empty")
+            print("输出栈，（左边为栈底）：空栈")
         else:  
-            print(self.__items)
+            print("输出栈，（左边为栈底）："+str(self.__items))
 
 stack = Stack()
 stack.printAll()
-print(stack.isempty())
+print("现在栈空吗:"+str(stack.isempty()))
+print("push1")
 stack.pushstack(1)
+print("push2")
 stack.pushstack(2)
+print("push3")
 stack.pushstack(3)
 stack.printAll()
+print("输出栈顶元素",end=":")
 print(stack.peekstack())
-            
+print("弹出栈顶元素")
+stack.popstack()
+stack.printAll()
 '''
 用list实现栈结构   
 用__防止外部获得栈内部内容  
