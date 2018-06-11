@@ -75,6 +75,4 @@ print(knn(20))
 #选取与当前点距离最小的K个点
 #确定前K个点所在类别的出现频率
 #返回前k个点出现频率最高的类别最为当前点的预测分类
-#inX输入向量，训练集dataSet,标签向量labels，k表示用于选择最近邻的数目           
-trainfile =  "bag/train.csv" 
-testfile = "bag/test.csv"
+#k表示用于选择最近邻的数目           
