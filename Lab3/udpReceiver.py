@@ -5,9 +5,11 @@
 import socket
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.bind( ('127.0.0.1',8888) )
-while True:
-    data, addr = s.recvfrom(1024)
-    print(data.decode(),addr[0],addr[1])
-    if data.decode().lower().find('bye') != -1:
-        break 
+with open('receivedMsg.txt','w') as f:
+    while True:
+        data, addr = s.recvfrom(1024)
+        f.write(str(data.decode())+str(addr[0])+str(addr[1])+'\n')
+        print(data.decode(),addr[0],addr[1])
+        if data.decode().lower().find('bye') != -1:
+            break 
 s.close()
